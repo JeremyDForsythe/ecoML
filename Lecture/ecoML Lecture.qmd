@@ -41,6 +41,27 @@ classoption: "aspectratio=169"
 
 \end{columns}
 
+## Machine Learning Definition
+
+\begin{columns}
+
+  \column{0.6\textwidth}
+  
+  \underline{Widely Accepted Definition:}
+  
+  \vspace{1em}
+  
+  A computer program is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$, as measured by $P$, improves with experience $E$. 
+
+
+  \column{0.4\textwidth}
+    \begin{center}
+    \includegraphics[width=\linewidth]{Images/AIvsMLvsGenAI.png}
+    \end{center}
+    
+
+\end{columns}
+
 ## Scientific Method
 
 \centering
