@@ -8,12 +8,17 @@ classoption: "aspectratio=169"
 
 ## Machine Learning Publications in Ecology
 
-\begin{figure}
-  \centering
-  \includegraphics[width=.65\textwidth]{Images/ML_EcologyPubs.png}
-\end{figure}
+\begin{columns}
+  \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{Images/ML_EcologyPubs.png}
+  \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{Images/MLpubs2.png}
+\end{columns}
 
-\tiny $\uparrow$ Cui et. al. (2023). Advances and applications of machine learning and deep learning in environmental ecology. Environmental Pollution Vol 335.
+\tiny Cui et. al. (2023). Advances and applications of machine learning and deep learning in environmental ecology. Environmental Pollution Vol 335.
+\tiny Pichler, M., \& Hartig, F. (2023). Machine learning and deep learning - A review for ecologists. Methods in Ecology and Evolution, 14, 994–1016.
 
 ## Machine Learning Definition
 
@@ -45,76 +50,105 @@ classoption: "aspectratio=169"
 
 \tiny $\uparrow$ Tuia et. al. (2022). Perspectives in machine learning for wildlife conservation. Nat Commun 13, 792.
 
-## Big Picture Goals?
+
+
+## Classical Statistics vs ML : Different Sides. Same Coin.
 
 \begin{columns}
-  \column{.4\textwidth}
-      \centering
-      \underline{Inference: Explanatory Power}
-      
-      \vspace{1em}
-      
-      \includegraphics[width=\columnwidth]{Images/EcologyPatterns.png}
-  \column{.6\textwidth}
-      \centering
-      \underline{Prediction: Predictive Power}
-      
-      \vspace{1em}
-      
-      \includegraphics[width=\columnwidth]{Images/EcologyPredict.png}
-      
-      \vspace {.5em}
-      
-      {\tiny $\leftarrow \uparrow$ Heilman et. al. (2022). Ecological forecasting of tree growth: Regional fusion of tree-ring and forest inventory data to quantify drivers and characterize uncertainty. Global Change Biology, 28, 2442–2460. \par}
+  \column{0.6\textwidth}
+    \textbf{Example:} One of the most common tasks we have as ecologists. Regression.
+
+    \vspace{.5em}
+
+    \textbf{Given} a set of $n$ observations (instances or samples), \textbf{estimate} the relationship between $i$ independent variables (predictors) and a dependent variable (target, response).
+    
+    \vspace{.5em}
+
+    \centering
+
+    \underline{Given} $x_i = (x_{i1},x_{i2},...,x_in)$ 
+
+    \vspace{.5em}
+
+    \underline{and} $y=y_1,y_2,...,y_n$ :
+
+    \vspace{.5em}
+
+    \underline{What is} $y = f(x) + \varepsilon$?
+    
+  \column{0.4\textwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{Images/ExampleDataRegression.png}
 \end{columns}
 
-## OLS vs. Machine Learning
 
-\begin{columns}
-  \column{.4\textwidth}
-      \centering
-      \underline{OLS Regression}
-      
-      \vspace{1em}
-      
-      \includegraphics[width=\columnwidth]{Images/OLSregression.png}
-      
-      $y_i = \beta_1 x_{i1} + \beta_2 x_{i2} + ... + \varepsilon_i$
-  \column{.6\textwidth}
-      \centering
-      \underline{Machine Learning}
-      
-      \vspace{1em}
-      
-      \includegraphics[width=\columnwidth]{Images/Copper.png}
-      
-      $y_i = ? x_{i...}$
-\end{columns}
+## Classical Statistics vs ML : Core Philosophy
+::: columns
+::: {.column width="50%"}
+**Classical Statistics**
 
-## OLS vs. Machine Learning
+- A subfield of mathematics. 
+- **Primary Goal:** Inference. Seeks the underlying relationship between output and input.
+- **Benefits:** Simple, Fast, Requires Less Training Data
+- **Limitations:** Constrained By Model Form, Model May Not Represent True Relationship, Based on Probabilities (p value)
+:::
 
-\begin{columns}
-  \column{.4\textwidth}
-      \centering
-      \underline{OLS Regression}
-      
-      \vspace{1em}
-      
-      \includegraphics[width=\columnwidth]{Images/OLSregression.png}
-      
-      $y_i = \beta_1 x_{i1} + \beta_2 x_{i2} + ... + \varepsilon_i$
-  \column{.6\textwidth}
-      \centering
-      \underline{Machine Learning}
-      
-      \vspace{1em}
-      
-      \includegraphics[width=\columnwidth]{Images/Ruadh.png}
-      
-      $y_i = ? x_{i...}$
-\end{columns}
+::: {.column width="50%"}
+**Machine Learning**
 
-## Tradeoffs?
+- A subfield of computer and data sciences.  
+- **Primary Goal:** Prediction. Seeks the best fit to the training data without a specified model form.
+- **Benefits:** Flexible, Potentially Higher Performance
+- **Limitations:** Requires More Data, Slower, Overfitting. Less Intrepretable? 
+:::
+:::
+
+\vfill
+
+\centering
+Both fields use data to uncover underlying patterns.
+
+
+## Classical Statistics vs ML : Approach to Modeling
+
+**Classical Statistics**
+
+- **Model-driven:** Start with an assumed statistical model (e.g., Linear Regression, ANOVA).  
+- The data is used to estimate the parameters of this pre-specified model.  
+- Heavy emphasis on diagnostics to check if model assumptions are met.  
+
+\vfill
+
+**Machine Learning**
+
+- **Data-driven:** The algorithm learns the model structure directly from the data.  
+- Fewer upfront assumptions about the data distribution or relationships.  
+- Models are often more complex and flexible (e.g., Random Forests, Neural Networks).  
+
+
+## Classical Statistics vs ML : Model Evaluation
+
+**Classical Statistics**
+
+- **Goodness-of-Fit:** How well does the model explain the data it was trained on?  
+- **Metrics:**
+  - p-values  
+  - Confidence Intervals  
+  - \( R^2 \)
+
+\vfill
+
+**Machine Learning**
+
+- **Predictive Power:** How well does the model perform on new, unseen data?  
+- **Metrics:**
+  - Cross-Validation Accuracy  
+  - Confusion Matrix
+  - Area Under the Curve (AUC)  
+  - Mean Squared Error (MSE)
+
+
+## Classical Statistics vs ML : A Symbiotic Relationship
 
 \begin{columns}
   \column{.55\textwidth}
@@ -126,44 +160,21 @@ classoption: "aspectratio=169"
       {\tiny $\leftarrow$ Al-Hindawi et. al. 2021. A Pro-con Debate for Machine Learning vs. Traditional Statistics.\par}
       
   \column{.4\textwidth}
-      \centering
-      \includegraphics[width=\columnwidth]{Images/ML_Tradeoff_Opinion.png}
-      
-        
-      \vspace{1em}
-      
-      {\tiny $\rightarrow$ Pichler \& Hartig (2022). Machine Learning and Deep Learning -- A review for Ecologists. Preprint.\par}
-\end{columns}
-
-## Opinions?
-
-\begin{columns}
-  \column{.55\textwidth}
-      \centering
-      \includegraphics[width=.6\columnwidth]{Images/Opinion.jpg}
-      
-      \vspace{.5em}
-      
-      {\tiny $\leftarrow$ Poster made by Amber Share at Bored Panda from ACTUAL Yelp review of the Grand Canyon. \par}
-      
-  \column{.4\textwidth}
-      \centering
-      \includegraphics[width=\columnwidth]{Images/ML_Tradeoff_Opinion.png}
-      
-        
-      \vspace{1em}
-      
-      {\tiny $\rightarrow$ Pichler \& Hartig (2022). Machine Learning and Deep Learning -- A review for Ecologists. Preprint.\par}
+    \begin{itemize}
+      \item Classical statistics and machine learning are not mutually exclusive; they are converging fields. 
+      \item Machine learning provides powerful predictive tools, especially for large and complex datasets.
+      \item Newer advances have broken apart the "black box" and ML can now be used for inference.
+    \end{itemize}
 \end{columns}
 
 ## Back To Barney \& Moe
 
 \centering
-\includegraphics[width=\textwidth]{Images/barney-vs-ols.jpg}
+\includegraphics[width=\textwidth]{Images/Moe.png}
 
 \vspace{1em}
 
-``All models are wrong, but some are useful''. - George Box
+"All models are wrong, but some are useful." - George Box
 
 ## Machine Learning Basics
 
@@ -311,141 +322,10 @@ classoption: "aspectratio=169"
     
 \end{columns}
 
-## Machine Learning Basics : Terms
-
-\textbf{Given} a set of $n$ observations (instances or samples), \textbf{estimate} the relationship between $i$ independent variables (predictors) and a dependent variable (target, response).
+## Machine Learning Model Overviews
 
 \centering
-
-\underline{Given} $x_i = (x_{i1},x_{i2},...,x_in)$ 
-
-\vspace{.5em}
-
-\underline{and} $y=y_1,y_2,...,y_n$ :
-
-\vspace{.5em}
-
-\underline{What is} $y = f(x) + \varepsilon$?
-
-## Machine Learning Basics : Example
-
-\begin{columns}
-  \column{0.5\textwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{Images/ExampleData.png}
-  \column{0.5\textwidth}
-    \centering
-    \includegraphics[width=.95\columnwidth]{Images/ExampleDataRegression.png}
-\end{columns}
-
-## Machine Learning Basics : Noisy Signals
-
-\begin{columns}
-  \column{0.5\textwidth}
-    \centering
-    \includegraphics[width=.95\columnwidth]{Images/sdExample.png}
-  \column{0.5\textwidth}
-    \centering
-    \includegraphics[width=.95\columnwidth]{Images/sdExampleRegression.png}
-\end{columns}
-
-## Machine Learning Basics : Recipe
-
-\begin{columns}
-  \column{0.7\textwidth}
-    \begin{enumerate}
-      \item Split Data Into \textbf{Training} and \textbf{Test} Datasets. (Cross Validation)
-      \item \textbf{Fit} Candidate Models on Training Dataset
-      \item \textbf{Assess} Performance of Candidate Models on Testing Dataset Using Same Set of Metrics
-      \item \textbf{Choose} Final Model Form
-      \item \textbf{Fit} Final Model Form
-      \item \textbf{Interpret} Model Output / \textbf{Predict} Future Responses
-      \item Walk Away Feeling \textbf{Empowered $\rightarrow$}
-    \end{enumerate}
-  \column{0.3\textwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{Images/empowered.jpeg}
-\end{columns}
-
-## Tips \& Tricks : Model Form
-
-\begin{columns}
-  \column{0.5\textwidth}
-    \underline{\textbf{Parametric Models:}}
-    
-    \vspace{0.5em}
-    
-    \begin{itemize}
-      \item Summarizes data with a fixed set of model parameters in a fixed model form.
-      \item \textbf{Benefits:} Simple, Fast, Require Less Training Data
-      \item \textbf{Limitations:} Constrained By Model Form, Model May Not Represent True Relationship
-      \item \textbf{Examples:} Logistic Regression, Linear Discriminant Analysis
-    \end{itemize}
-  \column{0.5\textwidth}
-    \underline{\textbf{Nonparametric Models:}}
-    
-    \vspace{0.5em}
-    
-    \begin{itemize}
-      \item Seek the best fit to the training data without a specified model form.
-      \item \textbf{Benefits:} Flexible, Potentially Higher Performance
-      \item \textbf{Limitations:} Requires More Data, Slower, Overfitting
-      \item \textbf{Examples:} KNN, Support Vector Machines, Random Forests
-    \end{itemize}
-\end{columns}
-
-
-## Tips \& Tricks : Bias & Overfitting
-
-\begin{columns}
-
-  \column{0.5\textwidth}
-    \begin{center}
-      \includegraphics[width=\linewidth]{Images/OverUnderFit.png}
-    \end{center}
-    
-  \column{0.5\textwidth}
-  
-  \underline{Bias-Variance Tradeoff}
-  
-  \vspace{0.5em}
-  
-  \begin{itemize}
-  
-    \item Model is too simple, it will have very few parameters then it may have high bias and low variance.
-    
-    \vspace{0.5em}
-    
-    \item On the other hand if the model has large number of parameters then it’s going to have high variance and low bias.
-    
-    \vspace{0.5em}
-    
-    \item Our job is to strike the correct balance.
-    
-  
-  \end{itemize}
-    
-\end{columns}
-
-## There Is No Magic...
-
-\begin{columns}
-    
-  \column{0.5\textwidth}
-  
-  There is no magic here, no one model is always better than another.
-  
-  \vspace{1em}
-  
-  Fit the models, make an informed choice, enjoy your life!
-
-    
-  \column{0.5\textwidth}
-    \begin{center}
-      \includegraphics[width=\linewidth]{Images/noMagic.png}
-    \end{center}
-  
-\end{columns}
+\includegraphics[width=\linewidth]{Images/top15.png}
 
 ## Machine Learning Model Overviews
 
@@ -454,7 +334,7 @@ classoption: "aspectratio=169"
 
 \vspace{2em}
 
-\tiny $\uparrow$ Pichler \& Hartig (2022). Machine Learning and Deep Learning -- A review for Ecologists. Preprint.
+\tiny $\uparrow$ Pichler, M., \& Hartig, F. (2023). Machine learning and deep learning - A review for ecologists. Methods in Ecology and Evolution, 14, 994–1016. 
 
 ## K Nearest Neighbor (KNN)
 
@@ -475,7 +355,7 @@ classoption: "aspectratio=169"
 
 \vspace{2em}
 
-\tiny $\uparrow$ Pichler \& Hartig (2022). Machine Learning and Deep Learning -- A review for Ecologists. Preprint.
+\tiny $\uparrow$ Pichler, M., \& Hartig, F. (2023). Machine learning and deep learning - A review for ecologists. Methods in Ecology and Evolution, 14, 994–1016. 
 
 ## Lasso \& Ridge Regression
 
@@ -507,7 +387,7 @@ classoption: "aspectratio=169"
 
 \vspace{2em}
 
-\tiny $\uparrow$ Pichler \& Hartig (2022). Machine Learning and Deep Learning -- A review for Ecologists. Preprint.
+\tiny $\uparrow$ Pichler, M., \& Hartig, F. (2023). Machine learning and deep learning - A review for ecologists. Methods in Ecology and Evolution, 14, 994–1016. 
 
 ## Support Vector Machines 
 
@@ -526,7 +406,7 @@ classoption: "aspectratio=169"
 \centering
 \includegraphics[width=\linewidth]{Images/randomForest.png}
 
-\tiny $\uparrow$ Pichler \& Hartig (2022). Machine Learning and Deep Learning -- A review for Ecologists. Preprint.
+\tiny $\uparrow$ Pichler, M., \& Hartig, F. (2023). Machine learning and deep learning - A review for ecologists. Methods in Ecology and Evolution, 14, 994–1016. 
 
 ## Decision Trees
 
@@ -551,9 +431,9 @@ classoption: "aspectratio=169"
 
 \vspace{2em}
 
-\tiny $\uparrow$ Pichler \& Hartig (2022). Machine Learning and Deep Learning -- A review for Ecologists. Preprint.
+\tiny $\uparrow$ Pichler, M., \& Hartig, F. (2023). Machine learning and deep learning - A review for ecologists. Methods in Ecology and Evolution, 14, 994–1016. 
 
-## Boosting
+## Random Forest : Boosting vs Bagging
 
 \centering
 \includegraphics[width=.925\linewidth]{Images/BoostingExplained.png}
@@ -591,7 +471,7 @@ classoption: "aspectratio=169"
 
 \vspace{2em}
 
-\tiny $\uparrow$ Pichler \& Hartig (2022). Machine Learning and Deep Learning -- A review for Ecologists. Preprint.
+\tiny $\uparrow$ Pichler, M., \& Hartig, F. (2023). Machine learning and deep learning - A review for ecologists. Methods in Ecology and Evolution, 14, 994–1016. 
 
 ## Neural Networks
 
@@ -601,7 +481,7 @@ classoption: "aspectratio=169"
 ## Neural Networks
 
 \centering
-\includegraphics[width=.8\linewidth]{Images/ANNexplained.png}
+\includegraphics[width=\linewidth]{Images/ANNupscale.png}
 
 ## Machine Learning Model Overviews
 
@@ -610,19 +490,13 @@ classoption: "aspectratio=169"
 
 \vspace{1em}
 
-\tiny $\uparrow$ Pichler \& Hartig (2022). Machine Learning and Deep Learning -- A review for Ecologists. Preprint.
+\tiny $\uparrow$ Pichler, M., \& Hartig, F. (2023). Machine learning and deep learning - A review for ecologists. Methods in Ecology and Evolution, 14, 994–1016. 
 
 ## Convolutional Neural Networks
 
-\begin{columns}
-  \column{0.5\textwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{Images/MuffinPups.jpeg}
-  \column{0.5\textwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{Images/patterns.png}
-\end{columns}
-
+\centering
+\includegraphics[width=.65\textwidth]{Images/Patterns.png}
+    
 ## Convolutional Neural Networks
 
 \begin{columns}
@@ -646,8 +520,165 @@ classoption: "aspectratio=169"
 
 ## Convolutional Neural Networks
 
+\begin{columns}
+  \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{Images/CNN_Features.png}
+    
+    \vspace{1em}
+    
+    \includegraphics[width=\columnwidth]{Images/CNN_Faces_Elephants_Chairs.png}
+  
+  \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{Images/filters2.png}
+\end{columns}
+
+## Convolutional Neural Networks
+
 \centering
-\includegraphics[width=\linewidth]{Images/filters2.jpeg}
+\includegraphics[width=.75\textwidth]{Images/MuffinPups.jpeg}
+
+## There Is No Magic...
+
+\begin{columns}
+    
+  \column{0.5\textwidth}
+  
+  There is no magic here, no one model is always better than another.
+  
+  \vspace{1em}
+  
+  Fit the models, make an informed choice, enjoy your life!
+
+    
+  \column{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=\linewidth]{Images/noMagic.png}
+    \end{center}
+  
+\end{columns}
+
+## Picking a Model: Big Picture Goals?
+
+\begin{columns}
+  \column{.4\textwidth}
+      \centering
+      \underline{Inference: Explanatory Power}
+      
+      \vspace{1em}
+      
+      \includegraphics[width=\columnwidth]{Images/EcologyPatterns.png}
+  \column{.6\textwidth}
+      \centering
+      \underline{Prediction: Predictive Power}
+      
+      \vspace{1em}
+      
+      \includegraphics[width=\columnwidth]{Images/EcologyPredict.png}
+      
+      \vspace {.5em}
+      
+      {\tiny $\leftarrow \uparrow$ Heilman et. al. (2022). Ecological forecasting of tree growth: Regional fusion of tree-ring and forest inventory data to quantify drivers and characterize uncertainty. Global Change Biology, 28, 2442–2460. \par}
+\end{columns}
+
+## Picking a Model: Bias & Overfitting
+
+\begin{columns}
+  \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=.95\columnwidth]{Images/sdExample.png}
+  \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=.95\columnwidth]{Images/sdExampleRegression.png}
+\end{columns}
+
+
+## Picking a Model: Bias & Overfitting
+
+\begin{columns}
+
+  \column{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=\linewidth]{Images/UnderOverFit.png}
+    \end{center}
+    
+  \column{0.5\textwidth}
+  
+  \underline{Bias-Variance Tradeoff}
+  
+  \vspace{0.5em}
+  
+  \begin{itemize}
+  
+    \item Model is too simple, it will have very few parameters then it may have high bias and low variance.
+    
+    \vspace{0.5em}
+    
+    \item On the other hand if the model has large number of parameters then it’s going to have high variance and low bias.
+    
+    \vspace{0.5em}
+    
+    \item Our job is to strike the correct balance.
+    
+  
+  \end{itemize}
+    
+\end{columns}
+
+## Interpretable Machine Learning
+
+\centering
+\includegraphics[width=\columnwidth]{Images/blackboxShap.png}
+
+## SHAP (SHapley Additive exPlanations)
+
+\centering
+\includegraphics[width=\columnwidth]{Images/regression_shap.png}
+
+## SHAP (SHapley Additive exPlanations)
+
+\begin{columns}
+  \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{Images/bostonHousingData.png}
+  \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{Images/bostonHousingModel.png}
+\end{columns}
+
+## SHAP (SHapley Additive exPlanations)
+
+\centering
+\includegraphics[width=\linewidth]{Images/bostonHousingSHAPimportance.png}
+
+## SHAP (SHapley Additive exPlanations)
+
+\centering
+\includegraphics[width=\linewidth]{Images/bostonHousingSHAPbee.png}
+
+## SHAP (SHapley Additive exPlanations)
+
+\centering
+\includegraphics[width=\linewidth]{Images/bostonHousingSHAPpdp.png}
+
+## Machine Learning Basics : Recipe
+
+\begin{columns}
+  \column{0.7\textwidth}
+    \begin{enumerate}
+      \item Split Data Into \textbf{Training} and \textbf{Test} Datasets. (Cross Validation)
+      \item \textbf{Fit} Candidate Models on Training Dataset
+      \item \textbf{Assess} Performance of Candidate Models on Testing Dataset Using Same Set of Metrics
+      \item \textbf{Choose} Final Model Form
+      \item \textbf{Fit} Final Model Form
+      \item \textbf{Interpret} Model Output / \textbf{Predict} Future Responses
+      \item Walk Away Feeling \textbf{Empowered $\rightarrow$}
+    \end{enumerate}
+  \column{0.3\textwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{Images/empowered.jpeg}
+\end{columns}
 
 ## Machine Learning in R
 
